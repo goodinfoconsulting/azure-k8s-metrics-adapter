@@ -12,14 +12,12 @@ import (
 	"time"
 
 	"github.com/Azure/azure-k8s-metrics-adapter/pkg/azure/appinsights"
-
+	"github.com/Azure/azure-k8s-metrics-adapter/pkg/azure/external_metrics"
 	"github.com/Azure/azure-k8s-metrics-adapter/pkg/azure/instancemetadata"
-	"github.com/Azure/azure-k8s-metrics-adapter/pkg/azure/monitor"
-	"github.com/Azure/azure-k8s-metrics-adapter/pkg/metriccache"
-
 	clientset "github.com/Azure/azure-k8s-metrics-adapter/pkg/client/clientset/versioned"
 	informers "github.com/Azure/azure-k8s-metrics-adapter/pkg/client/informers/externalversions"
 	"github.com/Azure/azure-k8s-metrics-adapter/pkg/controller"
+	"github.com/Azure/azure-k8s-metrics-adapter/pkg/metriccache"
 	azureprovider "github.com/Azure/azure-k8s-metrics-adapter/pkg/provider"
 	"github.com/golang/glog"
 	basecmd "github.com/kubernetes-incubator/custom-metrics-apiserver/pkg/cmd"
@@ -67,10 +65,13 @@ func setupAzureProvider(cmd *basecmd.AdapterBase, metricsCache *metriccache.Metr
 	}
 
 	defaultSubscriptionID := getDefaultSubscriptionID()
-	monitorClient := monitor.NewClient(defaultSubscriptionID)
 	appinsightsClient := appinsights.NewClient()
 
-	azureProvider := azureprovider.NewAzureProvider(defaultSubscriptionID, mapper, dynamicClient, appinsightsClient, monitorClient, metricsCache)
+	azureExternalClientFactory := azureexternalmetrics.AzureExternalMetricClientFactory{
+		DefaultSubscriptionID: defaultSubscriptionID,
+	}
+
+	azureProvider := azureprovider.NewAzureProvider(defaultSubscriptionID, mapper, dynamicClient, appinsightsClient, azureExternalClientFactory, metricsCache)
 	cmd.WithCustomMetrics(azureProvider)
 	cmd.WithExternalMetrics(azureProvider)
 }
