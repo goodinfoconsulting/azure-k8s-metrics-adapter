@@ -1,0 +1,72 @@
+#Check if the metrics server and API and installed in the AKS cluster
+kubectl get --raw "/apis/metrics.k8s.io/v1beta1/nodes" | jq .
+kubectl get --raw "/apis/custom.metrics.k8s.io/v1beta1" | jq .
+kubectl get --raw "/apis/external.metrics.k8s.io/v1beta1" | jq .
+
+#Clone Azure K8 Metrics Adapter
+git clone https://github.com/Azure/azure-k8s-metrics-adapter.git
+cd azure-k8s-metrics-adapter/charts
+
+#ìnstall helm on AKS cluster
+
+kubectl apply -f helm-rbac.yaml
+helm init --service-account tiller
+helm version
+
+#Install the Azure K8 Metrics Adapter
+#Make sure you run this from within the 'azure-k8s-metrics-adapter/charts' folder
+# Instrumentation Key 7a0451dd-28c2-4213-a5f8-86cb342c3071
+# ApplicationID 29536351-1c59-4c73-b0b6-e2d52621aef3
+# API Key itv4bkwoyj8ss7bbjfcieqb1ssmdiz4fpqcy0y3i
+
+helm install --name sample-release azure-k8s-metrics-adapter --namespace custom-metrics \
+    --set appInsights.appId=29536351-1c59-4c73-b0b6-e2d52621aef3 \
+    --set appInsights.key=itv4bkwoyj8ss7bbjfcieqb1ssmdiz4fpqcy0y3i \
+    --set azureAuthentication.createSecret=true
+
+#Create Secret
+kubectl create secret generic appinsightskey --from-literal=instrumentation-key=7a0451dd-28c2-4213-a5f8-86cb342c3071
+
+#Deploy a container app to test
+kubectl apply -f rps-deployment.yaml
+
+#Deploy the Custom Metric Configuration
+#note: the CustomMetric configuration is deployed per namespace. ? Does this mean you deploy to each namespace?
+kubectl apply -f custom-metric.yaml
+kubectl get acm #shortcut for custommetric
+
+#Deploy the HPA
+kubectl apply -f hpa.yaml
+
+git clone https://github.com/rakyll/hey.git
+hey -n 10000 -q 10 -c 10 http://52.174.59.224
+#or
+docker run --rm williamyeh/wrk http://52.174.159.47 -c 10 -d 10m -t 2
+docker run --rm williamyeh/wrk http://13.80.9.250 -c 10 -d 10m -t 2
+
+#Watch it scale
+kubectl get hpa rps-sample -w
+
+#Cleanup, Maintenance & Diagnostics
+#######################################
+
+#Cleanup
+
+kubectl delete -f hpa.yaml
+kubectl delete -f custom-metric.yaml
+kubectl delete -f rps-deployment.yaml
+helm delete --purge sample-release
+
+#Enable Windows Virtual Nodes on AKS
+az aks install-connector --resource-group SwiftStreamDEV --name SwiftStreamPILOT --connector-name virtual-kubelet --os-type Both
+az aks remove-connector --resource-group SwiftStreamDEV --name SwiftStreamPILOT --connector-name virtual-kubelet --os-type Both
+
+#Check the metrics that the Application Insights is collecting (by quering the AP Insights - Instance API)
+https://dev.applicationinsights.io/apiexplorer/metrics?appId=29536351-1c59-4c73-b0b6-e2d52621aef3&apiKey=itv4bkwoyj8ss7bbjfcieqb1ssmdiz4fpqcy0y3i&metricId=requests%2Fcount&timespan=PT24H&interval=PT5M
+
+#Monitor Metrics Adapter
+kubectl logs -f <name of container> -n <name of namespace>
+kubectl logs -f sample-release-azure-k8s-metrics-adapter-cbb977cc8-7bkbs -n custom-metrics
+
+#Build custom metrics adapter
+ docker build https://github.com/Azure/azure-k8s-metrics-adapter.git -t goodinfodev/swiftstreamk8metricsadapter:latest
