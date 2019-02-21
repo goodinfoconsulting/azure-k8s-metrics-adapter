@@ -69,4 +69,4 @@ kubectl logs -f <name of container> -n <name of namespace>
 kubectl logs -f sample-release-azure-k8s-metrics-adapter-cbb977cc8-7bkbs -n custom-metrics
 
 #Build custom metrics adapter
- docker build https://github.com/Azure/azure-k8s-metrics-adapter.git -t goodinfodev/swiftstreamk8metricsadapter:latest
+ docker build https://github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter.git -t goodinfodev/swiftstreamk8metricsadapter:latest
