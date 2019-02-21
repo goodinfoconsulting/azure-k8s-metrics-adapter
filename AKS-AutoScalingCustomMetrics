@@ -70,3 +70,13 @@ kubectl logs -f sample-release-azure-k8s-metrics-adapter-cbb977cc8-7bkbs -n cust
 
 #Build custom metrics adapter
  docker build --no-cache https://github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter.git -t goodinfodev/swiftstreamk8metricsadapter:latest
+
+ #Useful links
+K8 App Insights API Browser
+ https://dev.applicationinsights.io/apiexplorer/metrics?appId=29536351-1c59-4c73-b0b6-e2d52621aef3&apiKey=itv4bkwoyj8ss7bbjfcieqb1ssmdiz4fpqcy0y3i&metricId=requests%2Fcount&timespan=PT5M&interval=PT5M
+
+ Jeff AppInsights API Browser
+ https://dev.applicationinsights.io/apiexplorer/metrics?appId=34a9bb70-0e5c-4adc-8ec7-b6f66dace231&apiKey=ss1kybqpqpe6mekv1m4vjryedscjydbnlir0w504&metricId=requests%2Fcount&timespan=PT2D&interval=PT5M
+ 
+ Retrace
+ https://stackify.com/performance-counters-net-core/
