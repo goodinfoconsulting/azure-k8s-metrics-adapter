@@ -21,7 +21,7 @@ BRANCH=$(shell git rev-parse --abbrev-ref HEAD)
 
 all: build
 build-local: test
-	CGO_ENABLED=0 go build -a -tags netgo -o $(OUT_DIR)/adapter github.com/Azure/azure-k8s-metrics-adapter
+	CGO_ENABLED=0 go build -a -tags netgo -o $(OUT_DIR)/adapter github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter
 
 build: vendor verify-deploy verify-apis
 	docker build -t $(FULL_IMAGE):$(VERSION) .

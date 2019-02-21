@@ -3,11 +3,11 @@ package controller
 import (
 	"fmt"
 
-	"github.com/Azure/azure-k8s-metrics-adapter/pkg/azure/appinsights"
+	"github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/pkg/azure/appinsights"
 
-	"github.com/Azure/azure-k8s-metrics-adapter/pkg/azure/monitor"
-	listers "github.com/Azure/azure-k8s-metrics-adapter/pkg/client/listers/metrics/v1alpha1"
-	"github.com/Azure/azure-k8s-metrics-adapter/pkg/metriccache"
+	"github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/pkg/azure/monitor"
+	listers "github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/pkg/client/listers/metrics/v1alpha1"
+	"github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/pkg/metriccache"
 	"github.com/golang/glog"
 	"k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/util/runtime"

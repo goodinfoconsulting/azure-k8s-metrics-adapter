@@ -4,4 +4,4 @@ description: An implementation of the Kubernetes Custom Metrics API and External
 name: azure-k8s-metrics-adapter
 version: 0.1.0
 sources:
-  - https://github.com/Azure/azure-k8s-metrics-adapter
+  - https://github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter

@@ -4,7 +4,7 @@ kubectl get --raw "/apis/custom.metrics.k8s.io/v1beta1" | jq .
 kubectl get --raw "/apis/external.metrics.k8s.io/v1beta1" | jq .
 
 #Clone Azure K8 Metrics Adapter
-git clone https://github.com/Azure/azure-k8s-metrics-adapter.git
+git clone https://github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter.git
 cd azure-k8s-metrics-adapter/charts
 
 #ìnstall helm on AKS cluster
@@ -69,4 +69,4 @@ kubectl logs -f <name of container> -n <name of namespace>
 kubectl logs -f sample-release-azure-k8s-metrics-adapter-cbb977cc8-7bkbs -n custom-metrics
 
 #Build custom metrics adapter
- docker build https://github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter.git -t goodinfodev/swiftstreamk8metricsadapter:latest
+ docker build --no-cache https://github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter.git -t goodinfodev/swiftstreamk8metricsadapter:latest

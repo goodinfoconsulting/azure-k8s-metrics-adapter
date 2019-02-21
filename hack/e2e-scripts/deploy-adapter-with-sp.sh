@@ -6,7 +6,7 @@ set -o errexit
 GOPATH="${GOPATH:-$HOME/go}"
 
 echo; echo "Deploying metrics adapter..."
-cd $GOPATH/src/github.com/Azure/azure-k8s-metrics-adapter
+cd $GOPATH/src/github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter
 # If SP values are set via env vars, use them; otherwise, just use values file
 if [[ -v SP_CLIENT_ID ]]; then
     helm install --name adapter \

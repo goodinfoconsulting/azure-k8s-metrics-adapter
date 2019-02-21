@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/Azure/azure-k8s-metrics-adapter/pkg/apis/metrics/v1alpha1"
+	"github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/pkg/apis/metrics/v1alpha1"
 
 	"github.com/golang/glog"
 	"k8s.io/apimachinery/pkg/util/runtime"
@@ -13,7 +13,7 @@ import (
 	"k8s.io/client-go/tools/cache"
 	"k8s.io/client-go/util/workqueue"
 
-	informers "github.com/Azure/azure-k8s-metrics-adapter/pkg/client/informers/externalversions/metrics/v1alpha1"
+	informers "github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/pkg/client/informers/externalversions/metrics/v1alpha1"
 )
 
 // Controller will do the work of syncing the external metrics the metric adapter knows about.

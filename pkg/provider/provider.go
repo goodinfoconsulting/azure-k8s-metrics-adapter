@@ -3,10 +3,10 @@
 package provider
 
 import (
-	"github.com/Azure/azure-k8s-metrics-adapter/pkg/azure/appinsights"
-	"github.com/Azure/azure-k8s-metrics-adapter/pkg/metriccache"
+	"github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/pkg/azure/appinsights"
+	"github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/pkg/metriccache"
 
-	"github.com/Azure/azure-k8s-metrics-adapter/pkg/azure/monitor"
+	"github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/pkg/azure/monitor"
 
 	apimeta "k8s.io/apimachinery/pkg/api/meta"
 	"k8s.io/client-go/dynamic"

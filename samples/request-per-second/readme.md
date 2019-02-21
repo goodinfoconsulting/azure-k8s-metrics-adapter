@@ -30,8 +30,8 @@ Prerequisites:
 Get this repository and cd to this folder (on your GOPATH):
 
 ```
-go get -u github.com/Azure/azure-k8s-metrics-adapter
-cd $GOPATH/src/github.com/Azure/azure-k8s-metrics-adapter/samples/servicebus-queue/
+go get -u github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter
+cd $GOPATH/src/github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/samples/servicebus-queue/
 ```
 
 ## Configure Application Insights

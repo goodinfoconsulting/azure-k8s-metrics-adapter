@@ -28,8 +28,8 @@ Prerequisites:
 Get this repository and cd to this folder (on your GOPATH):
 
 ```
-go get -u github.com/Azure/azure-k8s-metrics-adapter
-cd $GOPATH/src/github.com/Azure/azure-k8s-metrics-adapter/samples/servicebus-queue/
+go get -u github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter
+cd $GOPATH/src/github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/samples/servicebus-queue/
 ```
 
 ## Setup Service Bus
@@ -57,8 +57,8 @@ export SERVICEBUS_CONNECTION_STRING="$(az servicebus queue authorization-rule ke
 
 ### Enable Access to Azure Resources
 
-Run the scripts provided to either [enable MSI](https://github.com/Azure/azure-k8s-metrics-adapter#azure-setup), [Azure AD Pod Identity](https://github.com/Azure/azure-k8s-metrics-adapter#azure-setup#using-azure-ad-pod-identity
-) or [configure a Service Principal](https://github.com/Azure/azure-k8s-metrics-adapter/blob/master/README.md#using-azure-ad-application-id-and-secret) with the following environment variables for giving the access to the Service Bus Namespace Insights provider.
+Run the scripts provided to either [enable MSI](https://github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter#azure-setup), [Azure AD Pod Identity](https://github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter#azure-setup#using-azure-ad-pod-identity
+) or [configure a Service Principal](https://github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/blob/master/README.md#using-azure-ad-application-id-and-secret) with the following environment variables for giving the access to the Service Bus Namespace Insights provider.
 
 ### Start the producer
 Make sure you have cloned this repository and are in the folder `samples/servicebus-queue` for remainder of this walkthrough.
@@ -138,11 +138,11 @@ helm install --name sample-release ../../charts/azure-k8s-metrics-adapter --name
 
 > Note: if you used [Azure AD Pod Identity](../../README.md#using-azure-ad-pod-identity) you need to use the specific adapter template file that declares the Azure Identity Binding on [Line 49](../../deploy/adapter-aad-pod-identity.yaml#L49) and [Line 61](../../deploy/adapter-aad-pod-identity.yaml#L61).
 > ```bash
-> kubectl apply -f >https://raw.githubusercontent.com/Azure/azure-k8s-metrics-adapter/master/deploy/adapter-aad-pod-identity.yaml
+> kubectl apply -f >https://raw.githubusercontent.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/master/deploy/adapter-aad-pod-identity.yaml
 >```
 
 
-Check you can hit the external metric endpoint.  The resources will be empty as it [is not implemented yet](https://github.com/Azure/azure-k8s-metrics-adapter/issues/3) but you should receive a result.
+Check you can hit the external metric endpoint.  The resources will be empty as it [is not implemented yet](https://github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/issues/3) but you should receive a result.
 
 ```
 kubectl get --raw "/apis/external.metrics.k8s.io/v1beta1" | jq .

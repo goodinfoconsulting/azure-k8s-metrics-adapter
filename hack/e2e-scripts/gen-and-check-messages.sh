@@ -6,7 +6,7 @@ set -o errexit
 GOPATH="${GOPATH:-$HOME/go}"
 SERVICEBUS_QUEUE_NAME="${SERVICEBUS_QUEUE_NAME:-externalq}"
 
-cd $GOPATH/src/github.com/Azure/azure-k8s-metrics-adapter/samples/servicebus-queue/
+cd $GOPATH/src/github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/samples/servicebus-queue/
 
 # Copy original files
 cp producer/main.go producer/main.go.copy

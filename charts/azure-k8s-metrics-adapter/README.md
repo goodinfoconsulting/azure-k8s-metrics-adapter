@@ -8,11 +8,11 @@ This adapter enables you to scale your [application deployment pods](https://kub
 Clone this repository and cd to the root folder:  
 
 ```
-go get -u github.com/Azure/azure-k8s-metrics-adapter
-cd $GOPATH/src/github.com/Azure/azure-k8s-metrics-adapter/
+go get -u github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter
+cd $GOPATH/src/github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/
 ```
 
-> If you are not planning on modify the project and don't have Go installed, you can clone this via the `git clone https://github.com/Azure/azure-k8s-metrics-adapter.git` and `cd` to the root of the project.
+> If you are not planning on modify the project and don't have Go installed, you can clone this via the `git clone https://github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter.git` and `cd` to the root of the project.
 
 Next create a namespace and install:
 
@@ -62,7 +62,7 @@ helm delete my-release
 
 ## Authentication to Azure Montior
 
-This project offers 3 methods for authenticating to the Azure Monitor API: [MSI](https://github.com/Azure/azure-k8s-metrics-adapter#using-azure-managed-service-identity-msi), Azure AD Application with Client Secret, and Azure AD Application with Client Certificate. By default this chart will use MSI authentication.
+This project offers 3 methods for authenticating to the Azure Monitor API: [MSI](https://github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter#using-azure-managed-service-identity-msi), Azure AD Application with Client Secret, and Azure AD Application with Client Certificate. By default this chart will use MSI authentication.
 
 Optionally the `azureAuthentication.method` value can be specified and either Azure AD Application with Client Secret or Azure AD Application with Client Certificate can be set using the following values for `azureAuthentication.method`
 - `clientSecret` for Azure AD Application with Client Secre. These additional values must be set to use the client certificate

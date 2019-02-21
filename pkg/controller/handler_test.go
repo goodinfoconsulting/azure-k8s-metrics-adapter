@@ -4,16 +4,16 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/Azure/azure-k8s-metrics-adapter/pkg/azure/appinsights"
+	"github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/pkg/azure/appinsights"
 
-	api "github.com/Azure/azure-k8s-metrics-adapter/pkg/apis/metrics/v1alpha1"
-	"github.com/Azure/azure-k8s-metrics-adapter/pkg/azure/monitor"
-	"github.com/Azure/azure-k8s-metrics-adapter/pkg/metriccache"
+	api "github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/pkg/apis/metrics/v1alpha1"
+	"github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/pkg/azure/monitor"
+	"github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/pkg/metriccache"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 
-	"github.com/Azure/azure-k8s-metrics-adapter/pkg/client/clientset/versioned/fake"
-	informers "github.com/Azure/azure-k8s-metrics-adapter/pkg/client/informers/externalversions"
+	"github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/pkg/client/clientset/versioned/fake"
+	informers "github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/pkg/client/informers/externalversions"
 )
 
 func getExternalKey(externalMetric *api.ExternalMetric) namespacedQueueItem {

@@ -3,7 +3,7 @@
 package provider
 
 import (
-	"github.com/Azure/azure-k8s-metrics-adapter/pkg/azure/monitor"
+	"github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/pkg/azure/monitor"
 	"github.com/golang/glog"
 	"github.com/kubernetes-incubator/custom-metrics-apiserver/pkg/provider"
 	"k8s.io/apimachinery/pkg/api/errors"

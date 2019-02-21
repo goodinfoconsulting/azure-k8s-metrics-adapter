@@ -17,7 +17,7 @@ Do this for each of `image-pipeline.yml` and `deploy-pipeline.yml`. For at least
 
 | Name | Description | Example |
 | --- | --- | --- |
-| `modulePath` | Standard working directory (makes YAML files cleaner) | $(GOPATH)/src/github.com/Azure/azure-k8s-metrics-adapter \* |
+| `modulePath` | Standard working directory (makes YAML files cleaner) | $(GOPATH)/src/github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter \* |
 | `GOBIN` | Golang bin directory for projects | $(GOPATH)/bin \* |
 | `GOPATH` | Golang project directory | $(system.defaultWorkingDirectory)/go \* |
 | `GOROOT` | Determines the version of Go used by ADO | /usr/local/go1.11 \* |

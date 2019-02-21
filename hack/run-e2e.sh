@@ -29,7 +29,7 @@ which docker
 set +o errexit 
 
 echo; echo "Running deployment scripts"
-cd $GOPATH/src/github.com/Azure/azure-k8s-metrics-adapter/hack/e2e-scripts
+cd $GOPATH/src/github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/hack/e2e-scripts
 chmod +x *.sh
 
 ./deploy-adapter-with-sp.sh

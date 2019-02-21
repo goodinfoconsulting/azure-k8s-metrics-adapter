@@ -19,7 +19,7 @@ limitations under the License.
 package v1alpha1
 
 import (
-	internalinterfaces "github.com/Azure/azure-k8s-metrics-adapter/pkg/client/informers/externalversions/internalinterfaces"
+	internalinterfaces "github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/pkg/client/informers/externalversions/internalinterfaces"
 )
 
 // Interface provides access to all the informers in this group version.

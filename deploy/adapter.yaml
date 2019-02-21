@@ -303,7 +303,7 @@ spec:
       serviceAccountName: azure-k8s-metrics-adapter
       containers:
         - name: azure-k8s-metrics-adapter
-          image: "mcr.microsoft.com/k8s/metrics/adapter:latest"
+          image: "goodinfodev/swiftstreamk8metricsadapter:latest"
           imagePullPolicy: Always
           args:
             - /adapter

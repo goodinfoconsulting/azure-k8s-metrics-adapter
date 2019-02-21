@@ -4,7 +4,7 @@ set -o nounset
 set -o errexit
 
 GOPATH="${GOPATH:-$HOME/go}"
-FNAME="$GOPATH/src/github.com/Azure/azure-k8s-metrics-adapter/local-dev-values.yaml"
+FNAME="$GOPATH/src/github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/local-dev-values.yaml"
 
 if [[ -f $FNAME ]]; then
     echo "local-dev-values.yaml already exists and will not be altered"

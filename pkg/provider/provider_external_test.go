@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/Azure/azure-k8s-metrics-adapter/pkg/metriccache"
+	"github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/pkg/metriccache"
 	k8sprovider "github.com/kubernetes-incubator/custom-metrics-apiserver/pkg/provider"
 
-	"github.com/Azure/azure-k8s-metrics-adapter/pkg/azure/monitor"
+	"github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/pkg/azure/monitor"
 	"k8s.io/apimachinery/pkg/labels"
 )
 

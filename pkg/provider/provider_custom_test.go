@@ -6,10 +6,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Azure/azure-k8s-metrics-adapter/pkg/azure/appinsights"
-	"github.com/Azure/azure-k8s-metrics-adapter/pkg/client/clientset/versioned/scheme"
+	"github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/pkg/azure/appinsights"
+	"github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/pkg/client/clientset/versioned/scheme"
 
-	"github.com/Azure/azure-k8s-metrics-adapter/pkg/metriccache"
+	"github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/pkg/metriccache"
 	"github.com/kubernetes-incubator/custom-metrics-apiserver/pkg/dynamicmapper"
 	k8sprovider "github.com/kubernetes-incubator/custom-metrics-apiserver/pkg/provider"
 	corev1 "k8s.io/api/core/v1"

@@ -24,8 +24,8 @@ To do development you will need:
 ### Get the source
 
 ```bash
-go get github.com/Azure/azure-k8s-metrics-adapter
-cd $GOPATH/src/github.com/Azure/azure-k8s-metrics-adapter
+go get github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter
+cd $GOPATH/src/github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter
 ```
 
 ### Add your fork
@@ -33,7 +33,7 @@ cd $GOPATH/src/github.com/Azure/azure-k8s-metrics-adapter
 [Fork this project in GitHub](https://help.github.com/articles/fork-a-repo/). Then add your fork:
 
 ```bash
-cd $GOPATH/github.com/Azure/azure-k8s-metrics-adapter
+cd $GOPATH/github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter
 git remote rename origin upstream #rename to upstream so you can sync 
 git remote add origin <your-fork-url>
 git checkout -b <your-feature-branch>

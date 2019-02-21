@@ -19,9 +19,9 @@ limitations under the License.
 package fake
 
 import (
-	clientset "github.com/Azure/azure-k8s-metrics-adapter/pkg/client/clientset/versioned"
-	azurev1alpha1 "github.com/Azure/azure-k8s-metrics-adapter/pkg/client/clientset/versioned/typed/metrics/v1alpha1"
-	fakeazurev1alpha1 "github.com/Azure/azure-k8s-metrics-adapter/pkg/client/clientset/versioned/typed/metrics/v1alpha1/fake"
+	clientset "github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/pkg/client/clientset/versioned"
+	azurev1alpha1 "github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/pkg/client/clientset/versioned/typed/metrics/v1alpha1"
+	fakeazurev1alpha1 "github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/pkg/client/clientset/versioned/typed/metrics/v1alpha1/fake"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
 	"k8s.io/client-go/discovery"

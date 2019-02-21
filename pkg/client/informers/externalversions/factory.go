@@ -23,9 +23,9 @@ import (
 	sync "sync"
 	time "time"
 
-	versioned "github.com/Azure/azure-k8s-metrics-adapter/pkg/client/clientset/versioned"
-	internalinterfaces "github.com/Azure/azure-k8s-metrics-adapter/pkg/client/informers/externalversions/internalinterfaces"
-	metrics "github.com/Azure/azure-k8s-metrics-adapter/pkg/client/informers/externalversions/metrics"
+	versioned "github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/pkg/client/clientset/versioned"
+	internalinterfaces "github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/pkg/client/informers/externalversions/internalinterfaces"
+	metrics "github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/pkg/client/informers/externalversions/metrics"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"

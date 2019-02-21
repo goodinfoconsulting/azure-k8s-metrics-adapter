@@ -1,5 +1,5 @@
-[![CircleCI](https://circleci.com/gh/Azure/azure-k8s-metrics-adapter/tree/master.svg?style=svg)](https://circleci.com/gh/Azure/azure-k8s-metrics-adapter/tree/master)
-[![GitHub (pre-)release](https://img.shields.io/github/release/Azure/azure-k8s-metrics-adapter/all.svg)](https://github.com/Azure/azure-k8s-metrics-adapter/releases)
+[![CircleCI](https://circleci.com/gh/goodinfoconsulting/swiftstream-k8s-metrics-adapter/tree/master.svg?style=svg)](https://circleci.com/gh/goodinfoconsulting/swiftstream-k8s-metrics-adapter/tree/master)
+[![GitHub (pre-)release](https://img.shields.io/github/release/goodinfoconsulting/swiftstream-k8s-metrics-adapter/all.svg)](https://github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/releases)
 
 # Azure Kubernetes Metrics Adapter
 
@@ -43,16 +43,16 @@ kubectl create secret generic azure-k8s-metrics-adapter -n custom-metrics \
 Deploy the adapter:
 
 ```
-kubectl apply -f https://raw.githubusercontent.com/Azure/azure-k8s-metrics-adapter/master/deploy/adapter.yaml
+kubectl apply -f https://raw.githubusercontent.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/master/deploy/adapter.yaml
 ```
 
 Deploy a metric configuration (requires you to configure the file below with *your* settings to a Service Bus Queue):
 
 ```
-kubectl apply -f https://raw.githubusercontent.com/Azure/azure-k8s-metrics-adapter/master/samples/resources/externalmetric-example.yaml
+kubectl apply -f https://raw.githubusercontent.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/master/samples/resources/externalmetric-example.yaml
 ```
 
-> There is also a [Helm chart](https://github.com/Azure/azure-k8s-metrics-adapter/tree/master/charts/azure-k8s-metrics-adapter) available for deployment for those using Helm in their cluster.
+> There is also a [Helm chart](https://github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/tree/master/charts/azure-k8s-metrics-adapter) available for deployment for those using Helm in their cluster.
 
 Deploy a Horizontal Pod Auto Scaler (HPA) to scale of your [external metric](#external-metrics) of choice:
 
@@ -247,7 +247,7 @@ The use the adapter your Azure Subscription must be provided.  There are a few w
 ## FAQ
 
 - Can I scale with Azure Storage queues?
-  - Not currently.  The [Azure Storage Queue](https://docs.microsoft.com/en-us/azure/storage/common/storage-metrics-in-azure-monitor?toc=%2fazure%2fstorage%2fqueues%2ftoc.json#capacity-metrics) only reports it's capacity metrics daily.  Follow this [issue](https://github.com/Azure/azure-k8s-metrics-adapter/issues/39) for updates.
+  - Not currently.  The [Azure Storage Queue](https://docs.microsoft.com/en-us/azure/storage/common/storage-metrics-in-azure-monitor?toc=%2fazure%2fstorage%2fqueues%2ftoc.json#capacity-metrics) only reports it's capacity metrics daily.  Follow this [issue](https://github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/issues/39) for updates.
 - The metrics numbers look slightly off compared to portal or Service Bus Explorer.  Why are the values not exact?
   - Azure Monitor has a delay (30s - 2 mins) in reported values.  This delay can also be seen in the Azure Monitor dashboard in the portal.  There is also a delay in the values reported when using Application Insights.
   
@@ -256,10 +256,10 @@ The use the adapter your Azure Subscription must be provided.  There are a few w
 See [Contributing](CONTRIBUTING.md) for more information.
 
 ## Issues
-Report any issues in the [Github issues](https://github.com/Azure/azure-k8s-metrics-adapter/issues).  
+Report any issues in the [Github issues](https://github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/issues).  
 
 ## Roadmap
-See the Projects tab for [current roadmap](https://github.com/Azure/azure-k8s-metrics-adapter/projects).
+See the Projects tab for [current roadmap](https://github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter/projects).
 
 ## Reporting Security Issues
 
