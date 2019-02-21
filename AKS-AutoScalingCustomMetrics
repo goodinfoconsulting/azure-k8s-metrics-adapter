@@ -33,7 +33,7 @@ kubectl apply -f rps-deployment.yaml
 #Deploy the Custom Metric Configuration
 #note: the CustomMetric configuration is deployed per namespace. ? Does this mean you deploy to each namespace?
 kubectl apply -f custom-metric.yaml
-kubectl get acm #shortcut for custommetric
+kubectl describe acm #shortcut for custommetric
 
 #Deploy the HPA
 kubectl apply -f hpa.yaml
@@ -42,7 +42,7 @@ git clone https://github.com/rakyll/hey.git
 hey -n 10000 -q 10 -c 10 http://52.174.59.224
 #or
 docker run --rm williamyeh/wrk http://52.174.159.47 -c 10 -d 10m -t 2
-docker run --rm williamyeh/wrk http://13.80.9.250 -c 10 -d 10m -t 2
+docker run --rm williamyeh/wrk http://137.117.211.77 -c 10 -d 10m -t 2
 
 #Watch it scale
 kubectl get hpa rps-sample -w
