@@ -4,6 +4,6 @@ metadata:
   name: rps
 spec:
   metric:
-    metricName: performanceCounters/requestsPerSecond
+    metricName: requests/count
     #applicationID: #optional
     #query: #not implemented yet

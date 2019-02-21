@@ -5,7 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: mcr.microsoft.com/k8s/metrics/adapter
+  #repository: mcr.microsoft.com/k8s/metrics/adapter
+  repository: goodinfodev/swiftstreamk8metricsadapter
   tag: latest
   pullPolicy: Always
 
