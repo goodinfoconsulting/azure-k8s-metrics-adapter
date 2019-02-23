@@ -77,7 +77,7 @@ func (c appinsightsClient) GetCustomMetric(request MetricRequest) (float64, erro
 	// grab just the last value which will be the latest value of the metric
 	metric := segments[len(segments)-1].AdditionalProperties[request.MetricName]
 	metricMap := metric.(map[string]interface{})
-	value := metricMap["avg"]
+	value := metricMap["sum"]
 	normalizedValue := normalizeValue(value)
 
 	glog.V(2).Infof("found metric value: %f", normalizedValue)

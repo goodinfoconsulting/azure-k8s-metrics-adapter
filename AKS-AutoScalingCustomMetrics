@@ -66,7 +66,7 @@ https://dev.applicationinsights.io/apiexplorer/metrics?appId=29536351-1c59-4c73-
 
 #Monitor Metrics Adapter
 kubectl logs -f <name of container> -n <name of namespace>
-kubectl logs -f sample-release-azure-k8s-metrics-adapter-cbb977cc8-7bkbs -n custom-metrics
+kubectl logs -f sample-release-azure-k8s-metrics-adapter-79857446dc-fmgm6 -n custom-metrics
 
 #Build custom metrics adapter
  docker build --no-cache https://github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter.git -t goodinfodev/swiftstreamk8metricsadapter:latest
