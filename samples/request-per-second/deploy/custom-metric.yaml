@@ -1,7 +1,7 @@
 apiVersion: azure.com/v1alpha1
 kind: CustomMetric
 metadata:
-  name: rps
+  name: requestspercount
 spec:
   metric:
     metricName: requests/count

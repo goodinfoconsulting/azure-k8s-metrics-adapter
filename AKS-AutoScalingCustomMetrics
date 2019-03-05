@@ -7,7 +7,7 @@ kubectl get --raw "/apis/external.metrics.k8s.io/v1beta1" | jq .
 git clone https://github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter.git
 cd azure-k8s-metrics-adapter/charts
 
-#ìnstall helm on AKS cluster
+#ìnstall helm on AKS cluster (Done once)
 
 kubectl apply -f helm-rbac.yaml
 helm init --service-account tiller
@@ -41,8 +41,8 @@ kubectl apply -f hpa.yaml
 git clone https://github.com/rakyll/hey.git
 hey -n 10000 -q 10 -c 10 http://52.174.59.224
 #or
-docker run --rm williamyeh/wrk http://52.174.159.47 -c 10 -d 10m -t 2
-docker run --rm williamyeh/wrk http://137.117.211.77 -c 10 -d 10m -t 2
+docker run --rm williamyeh/wrk http://104.40.217.1 -c 10 -d 10m -t 2
+docker run --rm williamyeh/wrk http://52.174.159.47 -c 50 -d 10m -t 10
 
 #Watch it scale
 kubectl get hpa rps-sample -w
@@ -66,10 +66,11 @@ https://dev.applicationinsights.io/apiexplorer/metrics?appId=29536351-1c59-4c73-
 
 #Monitor Metrics Adapter
 kubectl logs -f <name of container> -n <name of namespace>
-kubectl logs -f sample-release-azure-k8s-metrics-adapter-79857446dc-fmgm6 -n custom-metrics
+kubectl logs -f sample-release-azure-k8s-metrics-adapter-79857446dc-p4xnb -n custom-metrics
 
 #Build custom metrics adapter
  docker build --no-cache https://github.com/goodinfoconsulting/swiftstream-k8s-metrics-adapter.git -t goodinfodev/swiftstreamk8metricsadapter:latest
+ docker push goodinfodev/swiftstreamk8metricsadapter:latest
 
  #Useful links
 K8 App Insights API Browser
