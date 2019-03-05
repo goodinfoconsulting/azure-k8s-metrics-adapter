@@ -6,7 +6,7 @@ spec:
   scaleTargetRef:
     apiVersion: extensions/v1beta1
     kind: Deployment
-    name: rps-sample
+    name: jeff-master
   minReplicas: 1
   maxReplicas: 1
   metrics:
