@@ -1,16 +1,16 @@
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: rps-sample
+  name: SwiftStream-HPA
 spec:
   scaleTargetRef:
     apiVersion: extensions/v1beta1
     kind: Deployment
     name: jeff-master
   minReplicas: 1
-  maxReplicas: 1
+  maxReplicas: 100
   metrics:
   - type: Pods
     pods:
-      metricName: requestspercount
-      targetAverageValue: 100
+      metricName: requestDuration
+      targetAverageValue: 300

@@ -42,7 +42,7 @@ git clone https://github.com/rakyll/hey.git
 hey -n 10000 -q 10 -c 10 http://52.174.59.224
 #or
 docker run --rm williamyeh/wrk http://104.40.217.1 -c 10 -d 10m -t 2
-docker run --rm williamyeh/wrk http://52.174.159.47 -c 50 -d 10m -t 10
+docker run --rm williamyeh/wrk http://13.80.4.157 -c 1 -d 10m -t 1
 
 #Watch it scale
 kubectl get hpa rps-sample -w
@@ -56,6 +56,9 @@ kubectl delete -f hpa.yaml
 kubectl delete -f custom-metric.yaml
 kubectl delete -f rps-deployment.yaml
 helm delete --purge sample-release
+kubectl get pods | grep Terminating | awk '{print $1}' | xargs kubectl delete pod --grace-period=0 #--force
+//*not working for now | az container list --query "[?contains(resourceGroup, 'MC_SwiftStreamDEV_SwiftStreamPILOT_westeurope')]" | az container delete
+Get-AzContainerGroup | Where-Object {$_.ResourceGroupName -eq "MC_SwiftStreamDEV_SwiftStreamPILOT_westeurope"} | Remove-AzContainerGroup
 
 #Enable Windows Virtual Nodes on AKS
 az aks install-connector --resource-group SwiftStreamDEV --name SwiftStreamPILOT --connector-name virtual-kubelet --os-type Both
@@ -81,3 +84,7 @@ K8 App Insights API Browser
  
  Retrace
  https://stackify.com/performance-counters-net-core/
+
+Build .NET 4.5 on Linux in 5 minutes
+https://medium.com/@hudsonmendes/build-net-4-5-on-linux-in-5-minutes-and-see-what-it-is-like-848ea45fc667
+

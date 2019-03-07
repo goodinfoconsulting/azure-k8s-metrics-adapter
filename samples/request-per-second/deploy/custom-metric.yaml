@@ -1,9 +1,9 @@
 apiVersion: azure.com/v1alpha1
 kind: CustomMetric
 metadata:
-  name: requestspercount
+  name: requestDuration
 spec:
   metric:
-    metricName: requests/count
+    metricName: requests/duration
     #applicationID: #optional
     #query: #not implemented yet
