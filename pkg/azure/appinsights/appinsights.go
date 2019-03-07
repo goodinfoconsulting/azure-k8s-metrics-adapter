@@ -57,7 +57,7 @@ func (c appinsightsClient) GetCustomMetric(request MetricRequest) (float64, erro
 	// any smaller time intervals and the values come back null
 	// TODO make this configurable?
 	request.Timespan = "PT5M"
-	request.Interval = "PT30S"
+	request.Interval = "PT1M"
 
 	metricsResult, err := c.getMetric(request)
 	if err != nil {
