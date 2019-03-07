@@ -1,7 +1,7 @@
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: SwiftStream-HPA
+  name: swiftstream-hpa
 spec:
   scaleTargetRef:
     apiVersion: extensions/v1beta1
@@ -13,4 +13,4 @@ spec:
   - type: Pods
     pods:
       metricName: requestduration
-      targetAverageValue: 300
+      targetAverageValue: 600

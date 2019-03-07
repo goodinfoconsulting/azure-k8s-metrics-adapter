@@ -52,12 +52,12 @@ func NewClient() AzureAppInsightsClient {
 // GetCustomMetric calls to Application Insights to retrieve the value of the metric requested
 func (c appinsightsClient) GetCustomMetric(request MetricRequest) (float64, error) {
 
-	// get the last 1 mins and chunking into 30 seconds
+	// get the last 5 mins and chunking into 1 seconds
 	// this seems to be the best way to get the closest average rate at time of request
 	// any smaller time intervals and the values come back null
 	// TODO make this configurable?
 	request.Timespan = "PT5M"
-	request.Interval = "PT5M"
+	request.Interval = "PT1S"
 
 	metricsResult, err := c.getMetric(request)
 	if err != nil {
