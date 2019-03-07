@@ -1,7 +1,7 @@
 apiVersion: azure.com/v1alpha1
 kind: CustomMetric
 metadata:
-  name: requestDuration
+  name: requestduration
 spec:
   metric:
     metricName: requests/duration
